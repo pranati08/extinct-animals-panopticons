@@ -1,0 +1,6 @@
+.container {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 72rem;
+    margin: 3rem auto 6rem;
+    text-align: center;
+}
