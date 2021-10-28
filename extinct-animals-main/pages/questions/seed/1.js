@@ -27,7 +27,7 @@ export default function SeedQuestion1() {
       method: 'post',
       body: JSON.stringify(info)
     })
-    
+
     router.push('/questions/seed/2')
   }
 
@@ -53,17 +53,18 @@ export default function SeedQuestion1() {
     out.value = ""
   }
 
+
     return (
       <Question_Layout>
         <Head>
           <title>Section 1</title>
         </Head>
-      
+
         <div id="w_id_sec">ID: { worker }</div>
         <br/>
 
         <h1>Section 1 of 3</h1>
-        <p><strong>Directions:</strong> Please specify when this organism went extinct using either the 
+        <p><strong>Directions:</strong> Please specify when this organism went extinct using either the
         scale or text box. Answer -1 if this organism is not extinct. Feel free to skip.</p>
 
         <Choices_Layout>
@@ -72,10 +73,10 @@ export default function SeedQuestion1() {
             height={300}
             width={400}
           />
-          
+
           <br/>
 
-          <form onSubmit={submit_seed}> 
+          <form onSubmit={submit_seed}>
             <output id="output" htmlFor="timeline"></output>
             <br/>
 
@@ -83,19 +84,25 @@ export default function SeedQuestion1() {
 
             <br/>
             <br/>
-            <div className="slider_box">
-              <input 
-                type="range" 
-                min="-1" 
-                max="1000000000"
-                className="slider" 
-                id="timeline" 
-                onChange={slider_value}
-              />
-              
-            </div>
+            <div className="range">
+                          <input type="range" min="1" max="100" value="50"
+                            className="slider"
+                            id="timeline"
+                            onChange={slider_value}
+                          />
+
+                        </div>
+
+                        <div class="sliderticks">
+    <p>0</p>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+  </div>
             <br/>
-              
+
             <label htmlFor="extinction_skip">Skip:</label>
             <br/>
             <input type="checkbox" id="e_skip"></input>
